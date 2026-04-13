@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2D6A4F;
+  --color-secondary: #FAF7F2;
+  --color-accent: #C9A84C;
+  --color-dark: #1C2B20;
+  --color-bg-light: #F2F0EB;
+  
+  --font-serif: "Georgia", serif;
+  --font-sans: "Arial", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-light text-dark font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-open .accordion-content {
+  max-height: 500px;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.glass-nav {
+  background: rgba(250, 247, 242, 0.9);
+  backdrop-filter: blur(10px);
+}
