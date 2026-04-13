@@ -61,7 +61,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { name: 'Über mich', href: '/#ueber-mich' },
     { name: 'Leistungen', href: '/#leistungen' },
-    { name: 'Diagnostik', href: '/diagnostik.html' },
     { name: 'Öffnungszeiten', href: '/#oeffnungszeiten' },
     { name: 'Kontakt', href: '/#kontakt' },
   ];
@@ -167,9 +166,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="space-y-6">
               <h4 className="text-white font-bold text-lg uppercase tracking-wider">Leistungen</h4>
               <ul className="space-y-3">
-                {['Diagnostik & Labor', 'Operationen', 'Zahnmedizin', 'Vorsorge', 'Online-Sprechstunde'].map((item) => (
-                  <li key={item}>
-                    <Link to={item === 'Diagnostik & Labor' ? '/diagnostik.html' : '/#leistungen'} className="text-secondary/60 hover:text-white transition-colors">{item}</Link>
+                {[
+                  { name: 'Diagnostik & Labor', href: '/diagnostik' },
+                  { name: 'Operationen', href: '/operationen' },
+                  { name: 'Zahnmedizin', href: '/zahnmedizin' },
+                  { name: 'Vorsorge', href: '/vorsorge' },
+                  { name: 'Online-Sprechstunde', href: '/online-sprechstunde' }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link to={item.href} className="text-secondary/60 hover:text-white transition-colors">{item.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -188,7 +193,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="pt-8 border-t border-white/10 text-center text-secondary/40 text-sm">
-            <p>© 2025 Dr. med. vet. Guntrun Janßen-Sinn · Kleintierpraxis Arnsberg-Bergheim</p>
+            <p>© 2025 Dr. med. vet. Guntrun Janssen-Sinn · Kleintierpraxis Arnsberg-Bergheim</p>
           </div>
         </div>
       </footer>

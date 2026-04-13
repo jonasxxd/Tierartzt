@@ -71,7 +71,7 @@ export default function Home() {
               
               <div className="pl-6 border-l-4 border-accent italic text-lg text-dark/70 py-2">
                 „Ich behandle jedes Tier als wäre es mein eigenes."
-                <span className="block mt-2 font-bold text-dark not-italic">— Dr. Guntrun Janßen-Sinn</span>
+                <span className="block mt-2 font-bold text-dark not-italic">— Dr. Guntrun Janssen-Sinn</span>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -143,43 +143,44 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { 
+                id: "diagnostik-bereich",
                 icon: <FlaskConical />, 
                 title: "Diagnostik & Labor", 
                 desc: "Hauseigenes Labor, Röntgen, Dentalröntgen, Ultraschall, EKG, Blutdruckmessung.",
-                link: "/diagnostik.html"
+                link: "/diagnostik"
               },
               { 
                 icon: <Stethoscope />, 
                 title: "Operationen", 
                 desc: "Erfahrene Anästhesie und chirurgische Eingriffe – vor und nach der OP bestens betreut.",
-                link: "#kontakt"
+                link: "/operationen"
               },
               { 
                 icon: <Scissors />, 
                 title: "Zahnmedizin für Tiere", 
                 desc: "Professionelle Zahnbehandlung inkl. Dentalröntgen für Hunde und Katzen.",
-                link: "/diagnostik.html"
+                link: "/zahnmedizin"
               },
               { 
                 icon: <ShieldCheck />, 
                 title: "Vorsorge & Impfungen", 
                 desc: "Regelmäßige Gesundheitschecks, Impfungen, Entwurmung und Parasitenvorsorge.",
-                link: "#kontakt"
+                link: "/vorsorge"
               },
               { 
                 icon: <Video />, 
                 title: "Online-Sprechstunde", 
                 desc: "Erste Einschätzung bequem von zu Hause — für unkomplizierte Fragen.",
-                link: "https://www.dr-janssen-sinn.de/Kontakt/Online-Sprechstunde"
+                link: "/online-sprechstunde"
               },
               { 
                 icon: <AlertCircle />, 
                 title: "Notfallberatung", 
                 desc: "Hinweise für den Notfall und Tipps, was Sie sofort tun können.",
-                link: "#notfall"
+                link: "/notfall"
               },
             ].map((service, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm hover-lift border-t-4 border-primary/0 hover:border-primary group">
+              <div key={i} id={service.id} className="bg-white p-8 rounded-2xl shadow-sm hover-lift border-t-4 border-primary/0 hover:border-primary group scroll-mt-32">
                 <div className="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                   {React.cloneElement(service.icon as React.ReactElement, { size: 28 })}
                 </div>
